@@ -3,27 +3,110 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Code Cracker</title>
+        <title>Cracking Code</title>
         <meta name="description" content="A compilation of brain teasers and coding interview questions.">
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <div class = "container">            
-            <div class = "home">
-                <img src = "Cracking_Code.png"/>
+        <header>
+            <div class = "container">
+                <div class = "logo"><img src = "Cracking_Code.png" alt = "logo" class = "logo"/></div>
+                <nav>
+                    <ul>
+                        <li><a href = "index.html">Home</a></li>
+                        <li><a href = "interview.html">Interview Questions</a></li>
+                        <li><a href = "brain_teaser.html">Brain Teasers</a></li>
+                        <li><a href = "practice.html">Practice</a></li>
+                        <li><a href = "aboutus.html">About Us</a></li>
+                        <li><a href = "#">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class = "home">
+            <div class = "header_slogan">
                 <h1> Cracking Code</h1>
-                <h3><em>Pushing you to solve problems with an algorithmic mindset</em></h3>
-                Welcome to Cracking Code! This will serve as your one-stop shop for all things computer science interview related. Our purpose is to help you to understand and apply the knowledge you have gained in the classroom to real-world problems. <strong><em>Computer science is the future and we want you to get ahead of the curve!</em></strong></p>
+                <p id = "slogan"><em>Algorithms Made Fun</em></p>
+            </div>
+            <div class = "homepage_text">
+                <p>Welcome to Cracking Code! This will serve as your one-stop shop for all things computer science interview related. Our purpose is to help you to understand and apply the knowledge you have gained in the classroom to real-world problems. Technology has deeply embedded itself in every realm of today's world and we have to keep the ball rolling. <strong><em>Computer science is the future and we want to get you ahead of the curve!</em></strong></p>
                 
-                <h3>Why Code Crackers?</h3>
-                <p>For any college student who has not been coding for years upon years like some of their peers, coding interviews can be extremely intimidating. </p>
+                <div class = "videos">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Dv7gLpW91DM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dNo_BVzNb28" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 
+                <p> <em>"Coding is the closest thing we have to a superpower"</em> -Drew Houston, Founder of Dropbox</p>
+                <p> <em>"The programmers of tomorrow are the wizards of the future...you're going to look like you have magic powers compared to everybody else"</em> -Gabe Newell, Founder of Valve</p>
+
+                <h3>Why Cracking Code?</h3>
+                <p>For any college student who has not been coding for years upon years, coding interviews can be extremely intimidating. </p>
+
                 <p><em>What if I can't solve the question? How do I even begin to approach this problem? There is no way that I'm writing this code correctly. I've learned so many data structures and algorithms, but which ones do I choose?</em></p>
-    
-                <p>These are all thoughts that go through most interviewees minds at some point. For that reason, Code Cracker hopes to ease your minds and help you feel more prepared during the interview by pushing you think outside the box on brain teasers and other algorithm-based questions presented on this site. Enjoy!</p>
+
+                <p>These are all thoughts that go through most interviewees minds at some point. For that reason, Cracking Code hopes to ease your minds and help you feel more prepared during the interview by pushing you think outside the box on brain teasers and other algorithm-based questions presented on this site. <br><br>Secondly, coding is <strong>not</strong> something that can be learned overnight, but rather a skill crafted with years of practice. Our goal is for you as a coder to be exposed to as many questions encompassing a wide variety of computer-science topics so that you have more confidence and tools at your disposal when you are in the room interviewing for that coveted internship or job. <em><strong>Enjoy!</strong></em></p>
+            </div>
+            
+            <div class = "BrainTeaserDay">
+                <h3>Brain Teaser of the Day</h3>
+                <p>There are 50 bikes with a tank that has the capacity to go 100 miles. Using these 50 bikes, what is the maximum distance that you can go? </p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+                <img src = "bike.jpeg" />
                 
+                <script>
+                    function myFunction() {
+                      var x = document.getElementById("myDIV");
+                      if (x.style.display === "none") {
+                        x.style.display = "inline-block";
+                      } else {
+                        x.style.display = "none";
+                      }
+                    }
+                </script>
+        
+                <button type = "button" onclick="myFunction()">Hide/Show Solution</button>
+                <div id="myDIV">
+                    <p id = "BTANS"><strong><em>Answer: 350 km.</em></strong> Most people will immediately answer 5000 miles, simply multiplying the number of bikes with their total capacity. However, the bikes are not staggered 100 miles apart conveniently for you to ride one bike to capacity just to find the next one. Therefore, we can move all bikes by 50 miles, then take the fuel from half the bikes and refill the other half. This would leave us with 25 bikes with full fuel tanks and a total distance covered of 50 miles. If we continue this process, we are left with 12 bikes and 100 miles covered, then 6 bikes and 150 miles covered, then 3 bikes and 200 miles covered, then 1 bike and 250 mile covered. Now, since we are left with 1 bike with a full fuel tank, we can ride it for the last 100 miles, giving us a maximum distance of 350 miles. Clever, right? </p>
+                </div>
+            </div>
+            
+            <div class = "InterviewDay">
+                <h3>Interview Question of the Day</h3>
+                <p>How do you find if a linked list has a cycle? </p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+                <img src = "singly-linkedlist.png"/>
+                <script>
+                    function myFunction_int() {
+                      var x = document.getElementById("myDIV_int");
+                      if (x.style.display === "none") {
+                        x.style.display = "inline-block";
+                      } else {
+                        x.style.display = "none";
+                      }
+                    }
+                </script>
+        
+                <button type = "button" onclick="myFunction_int()">Hide/Show Solution</button>
+                <div id="myDIV_int">
+                    <p id = "BTANS"><strong><em>Answer:</em></strong> Whenever you see an interview question regarding linked lists, you should think of the runner technique. The runner technique is where you use 2 pointers and have one of those pointers traverse through the linked list at a different rate than the other. For this question, let's initialize 2 pointers: slow and fast, both set to the head pointer to start. Then we want to continuously iterate, moving slow by 1 spot (slow = slow->next) and moving fast by 2 spots (fast = fast->next->next). If fast reaches the end of the linked list, or a nullptr, then we know there is no cycle and can return false. However, if there is a cycle, fast and slow will get caught in a loop, and since fast moves at twice the pace as slow, fast will eventually be at the same node as slow. Therefore, if fast ever equals slow, we know there is a cycle and can return true. This solution requires O(n) time and O(1) space.<br><br>Another approach to this problem would to use an unordered_set of Node* objects. As we traverse through the linked list, we can add every Node* to our set and if the node that we are at is already in the set, we know that that there is a cycle and return true. If we reach a nullptr, then we know there is no cycle and can return false. This solution is done in O(n) time and O(n) space. Cool!</p>
+                </div>
             </div>
         </div>
+        <footer>
+            <div class = "container_f">
+                <nav_f>
+                    <ul>
+                        <li><a href = "#">Facebook</a></li>
+                        <li><a href = "#">Twitter</a></li>
+                        <li><a href = "#">Instagram</a></li>
+                        <li><a href = "#">LinkedIn</a></li>
+                        <li><a href = "#">GitHub</a></li>
+                    </ul>
+                </nav_f>
+            </div>
+        </footer>
     </body>
 </html>
 
