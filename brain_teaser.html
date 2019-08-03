@@ -1,4 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <p>Brain Teaser!</p>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cracking Code</title>
+        <meta name="description" content="Interview Questions.">
+        <link rel="stylesheet" href="brain_teaser.css">
+    </head>
+    <body>
+        <header>
+            <div class = "container">
+                <div class = "logo"><img src = "Cracking_Code.png" alt = "logo" class = "logo"/></div>
+                <nav>
+                    <ul>
+                        <li><a href = "index.html">Home</a></li>
+                        <li><a href = "interview.html">Interview Questions</a></li>
+                        <li><a href = "brain_teaser.html">Brain Teasers</a></li>
+                        <li><a href = "practice.html">Practice</a></li>
+                        <li><a href = "aboutus.html">About Us</a></li>
+                        <li><a href = "#">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class = "home">
+            <div class = "header_slogan">
+                <h1> Brain Teasers</h1>
+            </div>
+            <div class = "main_text">
+                <p>Welcome to Brain Teasers section! Here are a compilation of brain teasers to practice with. Although they may not all relate directly to computer science topics, it is still important that you are able to think outside the box and quickly on your feet when solving problems. One of the most difficult and intimidating parts of coding interviews is not understanding how to approach problems; therefore, hopefully these brain teasers will help out! 
+                <img src = "Brain-logo-1.jpg"/>
+            </div>
+            
+            <script>
+                    function myFunction(id) {
+                      var x = document.getElementById(id);
+                      if (x.style.display === "none") {
+                        x.style.display = "inline-block";
+                      } else {
+                        x.style.display = "none";
+                      }
+                    }
+                </script>
+            
+            <div class = "BrainTeasers">
+                <h3 style="color: forestgreen">2 Eggs</h3>
+                <p><strong>Problem:</strong> You have 2 eggs and are in a 100 story building. You want to find the maximum height that you can drop the eggs from using the fewest number of drops. If you drop an egg and it doesn't break, you can reuse it. What is the fewest number of drops</p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('eggs')">Hide/Show Solution</button>
+                <div id="eggs">
+                    <p id = "BTANS"><strong><em>Answer: 14.</em></strong> To find the maximum floor that an egg can be dropped from, we can essentially do a linear search starting from the first floor and moving until an egg breaks. However, this gives us a worst case number of drops of 100 if that maximum floor is 100. What most people's minds go to is to use a binary search. However, that does not work: if the max floor is 10, and you drop your first egg at floor 50, then floor 25, you have now used up both of your eggs and did not find the right answer. Instead, let's take a more mathematical approach to this problem. Let's assume the largest number of drops you want to make is X. So we first go to floor X and drop an egg. If it breaks, then we know that the max floor is between 1 and X-1 so we then do a linear search. If it does not break, then we jump X-1 floors and repeat this process. The reason we jump X-1 floor is because we've already used up 1 drop so if need to do a linear search again, we can only do it on X-1 numbers to keep us within our constraint of X floors. By this logic, X + (X-1) + (X-2) + (X-3) + ... +2 + 1 = 100 and if we solve this equation, we get X = 13.6 so we round up to 14. </p>
+                </div>
+                
+                <h3 style="color: forestgreen">Measuring Water</h3>
+                <p><strong>Problem:</strong> Given unlimited water, a 5-gallon bucket and 3-gallon bucket, how do you measure out exactly 4-gallons.</p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('water')">Hide/Show Solution</button>
+                <div id="water">
+                    <p id = "BTANS"><strong><em>Answer: </em></strong> Fill up the 5 gallon bucket, dump 3 gallons into the 3 gallon bucket. This means that there are 2 gallons remaining in the 5-gallon bucket. Then we dump out the water from the 3 gallon bucket and pour the 2 gallons from the 5 gallon bucket into the 3 gallon bucket, leaving us with nothing in the 5 gallon container and 2 gallons in the 3 gallon container. We then fill up the 5 gallon container and pour until the 3-gallon bucket is full, and it becomes full after pouring exactly 1 gallon. This leaves us with 4 gallons in the 5-gallon container.</p>
+                </div>
+                
+                 <h3 style="color: forestgreen">Apples and Oranges</h3>
+                <p><strong>Problem:</strong> In front of you are 3 boxes, one of all apples, one of all oranges, and one mixed. Normally these are labelled "Apples", "Oranges", and "Mixed", but someone messed up and everything is labelled incorrectly. What is the smallest number of fruits you have to draw to figure out the labels?</p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('fruits')">Hide/Show Solution</button>
+                <div id="fruits">
+                    <p id = "BTANS"><strong><em>Answer: 1. </em></strong>The key to solving this brain teaser is that all the labels are wrong. If we draw a fruit from the container labeled "Mixed". If we draw an apple, then we know that container should be labeled "Apples". Then we know that container labeled "Apple" is wrong and should be labeled "Orange" and the one labeled "Orange" should be labeled mixed. </p>
+                </div>
+                
+                <h3 style="color: forestgreen">Weighing Pool Balls</h3>
+                <p><strong>Problem:</strong> You have N balls of which 1 ball weighs more than the other. How do you find that ball in the least number of weighs given a weighing scale? </p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('pool')">Hide/Show Solution</button>
+                <div id="pool">
+                    <p id = "BTANS"><strong><em>Answer: </em></strong>You split the balls into 2 groups and weigh them against each other. Which ever group is heavier contains the heavier ball. You continue this process until only 1 ball is left.</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class = "container_f">
+                <nav_f>
+                    <ul>
+                        <li><a href = "http://www.facebook.com">Facebook</a></li>
+                        <li><a href = "http://www.twitter.com">Twitter</a></li>
+                        <li><a href = "http://www.instagram.com">Instagram</a></li>
+                        <li><a href = "http://www.linkedin.com/in/aditya-chitta">LinkedIn</a></li>
+                        <li><a href = "http://www.github.com">GitHub</a></li>
+                    </ul>
+                </nav_f>
+            </div>
+        </footer>
+    </body>
 </html>
+
+
+
+

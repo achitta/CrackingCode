@@ -1,4 +1,105 @@
 <!DOCTYPE html>
 <html>
-    <p>INTERVIEW!</p>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cracking Code</title>
+        <meta name="description" content="Interview Questions.">
+        <link rel="stylesheet" href="interview.css">
+    </head>
+    <body>
+        <header>
+            <div class = "container">
+                <div class = "logo"><img src = "Cracking_Code.png" alt = "logo" class = "logo"/></div>
+                <nav>
+                    <ul>
+                        <li><a href = "index.html">Home</a></li>
+                        <li><a href = "interview.html">Interview Questions</a></li>
+                        <li><a href = "brain_teaser.html">Brain Teasers</a></li>
+                        <li><a href = "practice.html">Practice</a></li>
+                        <li><a href = "aboutus.html">About Us</a></li>
+                        <li><a href = "#">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class = "home">
+            <div class = "header_slogan">
+                <h1> Interview Questions</h1>
+            </div>
+            <div class = "main_text">
+                <p>Welcome to Interview Questions section! Here are a compilation of good interview questions to practice with for the future. They range over a wide variety of topics, from linked-lists to graph algorithms to hash tables. Remember, our goal is to help you reach your goals in the realm of computer science and that starts with interview preparation early on. 
+                <img src = "poke.png"/>
+            </div>
+            
+            <script>
+                function myFunction(id) {
+                    var x = document.getElementById(id);
+                    if (x.style.display === "none") {
+                    x.style.display = "inline-block";
+                    } else {
+                    x.style.display = "none";
+                    }
+                }
+            </script>
+            
+            <div class = "InterviewQuestions">
+                <h3 style="color: forestgreen">Contiguous Subarray with Given Sum</h3>
+                <p><strong>Problem:</strong> Given an unsorted array/vector of non-negative integers and size n, find the starting and ending indices of the subarray with the given sum, S.</p>
+                <p><strong>Example: </strong> array = {1,2,3,4,5,6,7,8,9,10}, S = 26 --> Output: 4 7 (subarray of 5,6,7,8 sums to 26)</p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('subarraysum')">Hide/Show Solution</button>
+                <div id="subarraysum">
+                    <p id = "BTANS"><strong><em>Answer: </em></strong> Let's start with the brute force solution: we could generate all possible contiguous subarrays from size 1 to n, summing them up, and checking if that sum equals S. However, this would be extremely inefficient in terms of time complexity, but has a O(1) space complexity (you would need to store the start and ending index). The more efficient way to approach this problem would be to initialize your starting and ending indices to the first element of the array and keep up a running sum. If the sum is less than S, we will increment the ending index by one and add the next element of the array. If the current sum is greater than S, we will increment the starting index by one and subtract the element that was at our starting index before we incremented it. We continue this process until the our current sum equals S, and we can print out the starting and ending indices. This solution takes O(1) space and O(n) time. </p>
+                </div>
+                
+                <h3 style="color: forestgreen">Anagram</h3>
+                <p><strong>Problem:</strong> Given 2 strings, return whether they are anagrams.</p>
+                <p><strong>Example: </strong> Strings: i am lord voldemort, tom marvolo riddle --> True <br> Strings: hello, lleop --> False</p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('anagram')">Hide/Show Solution</button>
+                <div id="anagram">
+                    <p id = "BTANS"><strong><em>Answer: </em></strong> The best way to approach this problem would be to create an unordered_map, with the key as characters and value as integers. We would first loop through the characters of the first string and increment the corresponding count of each character by 1. Once we are done with that, loop through the characters of the second string and decrement the corresponding count of each character by 1. Lastly, loop through this hash table and if any of the values are not 0, then we know it is not an anagram. This solution takes O(n) time and O(n) space.</p>
+                </div>
+                
+                 <h3 style="color: forestgreen">Finding Middle Element of a Linked List</h3>
+                <p><strong>Problem:</strong> Given linked list, find the middle node.</p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('linked')">Hide/Show Solution</button>
+                <div id="linked">
+                    <p id = "BTANS"><strong><em>Answer: </em></strong> One way to approach this problem would be to start from the beginning of the linked list, count the number of nodes, and then traverse through half of the count you found. This solution is O(n) time and O(1) memory. A more clever way to approach this questions, however, would be to use the runner technique. If we keep a slow and fast pointer, moving fast 2 nodes and slow 1 node at every iteration, then once fast reaches the end of the linked list, slow will be at the middle of the linked list. Once again, this solution is O(1) space and O(n) time.</p>
+                </div>
+                
+                <h3 style="color: forestgreen">Rotten Oranges</h3>
+                <p><strong>Problem:</strong> Given matrix mxn where each cell in the matrix can have values 0,1, or 2 which has the following meaning: <br>0: Empty <br> 1: Fresh <br> 2: Rotten <br><br>So we have to determine what is the minimum time required so that all the oranges become rotten. A rotten orange at index [i,j] can rot other fresh orange at indexes [i-1,j], [i+1,j], [i,j-1], [i,j+1] (up, down, left and right). If it is impossible to rot every orange then simply return -1.</p>
+                <p id="TRYSOLVE">Try solving it before looking at the solution!</p>
+        
+                <button type = "button" onclick="myFunction('rotten')">Hide/Show Solution</button>
+                <div id="rotten">
+                    <p id = "BTANS"><strong><em>Answer: </em></strong> The main data structure behind this are stacks/queues. For this problem, it is simpler to use a queue and use a breadth-first-search to a certain extent. We first add all the spots originally with a 2 into our queue and set some count to 0. Then pop each element out and add all the neighbors that are a 1, set those spots as checked, and then increment our count. We continue this process until our queue is empty. At the end, we need to check to see if every spot was visited, and if it was not return -1 and if they are, return count. O(n^2) time and O(n^2) space.</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class = "container_f">
+                <nav_f>
+                    <ul>
+                        <li><a href = "http://www.facebook.com">Facebook</a></li>
+                        <li><a href = "http://www.twitter.com">Twitter</a></li>
+                        <li><a href = "http://www.instagram.com">Instagram</a></li>
+                        <li><a href = "http://www.linkedin.com/in/aditya-chitta">LinkedIn</a></li>
+                        <li><a href = "http://www.github.com">GitHub</a></li>
+                    </ul>
+                </nav_f>
+            </div>
+        </footer>
+    </body>
 </html>
+
+
+
+

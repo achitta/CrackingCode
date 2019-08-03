@@ -1,0 +1,4 @@
+Answer
+Alexa has a 5/18 chance of pulling out a fruit she likes.
+4 apples + 6 blueberries = 10 fruits she likes
+10/36 = 5/18
